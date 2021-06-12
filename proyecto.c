@@ -180,4 +180,3 @@ void submenu(){
     printf("\n\t\t0) Regresar al menú anterior");
 };
 
-
