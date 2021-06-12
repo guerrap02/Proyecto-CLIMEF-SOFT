@@ -1,30 +1,32 @@
-/*      SEMINARIO DE SOLUCIÓN DE
-        PROBLEMAS DE PREGRAMACIÓN:
-                PROYECTO
+/*              SEMINARIO DE SOLUCIÓN DE
+                PROBLEMAS DE PREGRAMACIÓN:
+                    PROYECTO
 
     EQUIPO 2:
-    GUERRA LÓPEZ PAULINA ESTEFANIA
-    MOISES
+                GUERRA LÓPEZ PAULINA ESTEFANIA
+                ZARAGOZA JIMENEZ MOISES DE JESUS
 
-    TEMA: SISTEMA MEDICO ADMINISTRATIVO
-            *CLIMEF SOFT*   */
+    TEMA:       SISTEMA MEDICO ADMINISTRATIVO
+                        *CLIMEF SOFT*   */
 
-//  librerias
+//libr4erias
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-//  Constantes
+//constantes
 #define USUARIO "ADMIN"
 #define CLAVE "123"
+
 #define TECLA_ENTER 13
 #define TECLA_BACKSPACE 8
 #define LONGITUD 5
 #define MAX_INTENTOS 3
+#define TAM 700
 
 //  Prototipos
 void menu_principal();
-void submenu():
+void submenu();
 
 //  Estructuras
     //  Las estructuras no estan completas me revolivi en este apartado
@@ -32,34 +34,33 @@ void submenu():
 struct empleado{
     int num_empleado;
     char nombre[30];
-};
+}registro[TAM];
 
     //  Paciente
 struct paciente{
     char nombre [30];
     int edad, rfc;
     char curp[30], domicilio[20], telefono[10];
-};
+}registro[TAM];
 
     // consulta
 struct consulta{
-    char id[10],
+    char id[10];
     int rfcc;
     char nombre[30];
-};
+}registro[TAM];
 
 
 // main
-int main() {
-    //  variables
+int main(){
 	char usuario[LONGITUD + 1];
 	char clave[LONGITUD + 1];
 	int intento = 0;
 	int ingresa = 0;
 	char caracter;
-	int i = 0, opc, seguir = 1;
+	int i = 0, opc, opc1, seguir = 1;
 
-	do {    //  ciclo para el ingreso
+	do {
 		i = 0;
 		system("cls");
 		printf("\n\t\t\tINICIO DE SESION\n");
@@ -110,20 +111,39 @@ int main() {
                 system("cls");
                 printf("\n\n\t\tEmpleado\n");
                 submenu();
-                break:
+                printf("\n\t\tSeleciona una opcion: ");
+                scanf("%d", &opc1);
+                switch (opc1){
+                    case 0:
+                        break;
+                    case 1:
+                        // alta
+                        break;
+                    case 2:
+                        //visualizar
+                        break;
+                    case 3:
+                        //Busqueda
+                    default:
+                        printf("\n\t\tHa seleccionado una opcion incorrecta");
+                }
+
+                break;
             case 2:
                 system("cls");
                 printf("\n\n\t\tPaciente\n");
                 submenu();
-                break:
-            caso 3:
+                system("PAUSE");
+                break;
+            case 3:
                 system("cls");
                 printf("\n\n\t\tConsulta\n");
                 submenu();
-                break:
-            caso 0:
+                system("PAUSE");
+                break;
+            case 0:
                 seguir = 0;
-                break:
+                break;
             default:
                 system("cls");
                 printf("\n\n\tHa ingresado una opcion incorrecta, intente de nuevo\n");
@@ -159,3 +179,5 @@ void submenu(){
     printf("\n\t\t3) Busqueda (localización de datos)");
     printf("\n\t\t0) Regresar al menú anterior");
 };
+
+
